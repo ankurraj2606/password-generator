@@ -97,10 +97,10 @@ function App() {
         </div>
       </div>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center w-1/3">
         <button
           type="button"
-          className="bg-blue-400 font-mono font-bold font-3xl py-4 px-8"
+          className="bg-blue-400 font-mono font-bold font-3xl py-4 px-8 w-11/12"
           onClick={passwordGenerator}
         >
           Generate Password
