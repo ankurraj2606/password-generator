@@ -33,78 +33,80 @@ function App() {
   };
 
   return (
-    <div className="w-full h-screen bg-yellow-50 flex justify-center items-center flex-col ">
-      <h1 className="text-3xl text-black font-bold  font-mono">
-        Password Generator
-      </h1>
-      <div className="flex my-4 w-1/3 justify-center">
-        <input
-          type="text"
-          value={password}
-          className="w-3/4 px-2 border border-blue-400 font-mono"
-          readOnly
-          ref={passRef}
-        />
-        <button
-          type="button"
-          className="py-2 px-4 bg-blue-400 text-white cursor-pointer font-mono"
-          onClick={copyPassword}
-        >
-          Copy
-        </button>
-      </div>
-
-      <div className="flex my-4 justify-center">
-        <div className="flex items-center px-2 py-2 text-center">
+    <div className="w-full h-screen bg-yellow-50 flex mx-auto justify-center items-center shadow-white shadow-2xl ">
+      <div className="w-3/5 flex justify-center items-center flex-col bg-white h-2/3 ">
+        <h1 className="text-3xl text-black font-bold  font-mono">
+          Password Generator
+        </h1>
+        <div className="flex my-4 w-full justify-center">
           <input
-            type="range"
-            value={length}
-            min={6}
-            max={100}
-            className="mr-2"
-            onChange={(e) => setLength(e.target.value)}
+            type="text"
+            value={password}
+            className="w-3/5 px-2 border border-blue-400 font-mono"
+            readOnly
+            ref={passRef}
           />
-          <label htmlFor="password" className="font-semibold font-mono">
-            Password Length {length}
-          </label>
-        </div>
-        <div className="flex items-center  px-2 py-2 text-center">
-          <input
-            type="checkbox"
-            value={isNumberIncluded}
-            name="number"
-            id="number"
-            className="mr-2"
-            onChange={() => setIsNumberIncluded((prev) => !prev)}
-          />
-          <label htmlFor="number" className="font-semibold font-mono">
-            Number
-          </label>
+          <button
+            type="button"
+            className="py-2 px-4 bg-blue-400 text-white cursor-pointer font-mono"
+            onClick={copyPassword}
+          >
+            Copy
+          </button>
         </div>
 
-        <div className="flex items-center px-2 py-2 text-center">
-          <input
-            type="checkbox"
-            name="symbol"
-            id="symbol"
-            value={isSymbolIncluded}
-            onChange={() => setIsSymbolIncluded((prev) => !prev)}
-            className="mr-2"
-          />
-          <label htmlFor="symbol" className="font-semibold font-mono">
-            Symbol
-          </label>
-        </div>
-      </div>
+        <div className="flex my-4 justify-center">
+          <div className="flex items-center px-2 py-2 text-center">
+            <input
+              type="range"
+              value={length}
+              min={6}
+              max={100}
+              className="mr-2"
+              onChange={(e) => setLength(e.target.value)}
+            />
+            <label htmlFor="password" className="font-semibold font-mono">
+              Password Length {length}
+            </label>
+          </div>
+          <div className="flex items-center  px-2 py-2 text-center">
+            <input
+              type="checkbox"
+              value={isNumberIncluded}
+              name="number"
+              id="number"
+              className="mr-2"
+              onChange={() => setIsNumberIncluded((prev) => !prev)}
+            />
+            <label htmlFor="number" className="font-semibold font-mono">
+              Number
+            </label>
+          </div>
 
-      <div className="flex justify-center w-1/3">
-        <button
-          type="button"
-          className="bg-blue-400 font-mono font-bold font-3xl py-4 px-8 w-11/12"
-          onClick={passwordGenerator}
-        >
-          Generate Password
-        </button>
+          <div className="flex items-center px-2 py-2 text-center">
+            <input
+              type="checkbox"
+              name="symbol"
+              id="symbol"
+              value={isSymbolIncluded}
+              onChange={() => setIsSymbolIncluded((prev) => !prev)}
+              className="mr-2"
+            />
+            <label htmlFor="symbol" className="font-semibold font-mono">
+              Symbol
+            </label>
+          </div>
+        </div>
+
+        <div className="flex justify-center w-2/3">
+          <button
+            type="button"
+            className="bg-blue-400 font-mono font-bold font-3xl py-4 px-8 w-full text-white"
+            onClick={passwordGenerator}
+          >
+            Generate Password
+          </button>
+        </div>
       </div>
     </div>
   );
